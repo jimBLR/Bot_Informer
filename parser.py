@@ -59,5 +59,4 @@ def parse(URL):
             car_list.extend(get_content(html.text))
             save_file(car_list, 'cars.csv')
             read_file = pd.read_csv('cars.csv')
-            read_file.to_excel('cars.xlsx', index=None, header=True)
 

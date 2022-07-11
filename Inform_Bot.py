@@ -104,8 +104,8 @@ def parse(message):
             for page in range(1, ):
                 html = get_html(message.text, params={'page': page})
                 car_list.extend(get_content(html.text))
-                save_file(car_list, f"{os.getcwd()}/cars.xlsx")
-                file = open(f"{os.getcwd()}/cars.xlsx")
+                save_file(car_list, f"{os.getcwd()}/cars.csv")
+                file = open(f"{os.getcwd()}/cars.csv")
                 bot.send_message(message.chat.id, f'Вот Ваша ссылка для скачивания списка автомобилей!')
                 bot.send_document(message.chat.id, file)
         else:
