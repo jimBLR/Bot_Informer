@@ -1,15 +1,14 @@
 import telebot
 from telebot import types
-from templates.config import BOT_TOKEN
-from templates.weather import get_weather
-from templates.translate import *
-from templates.parser import *
-from templates.news import get_article
-from templates.world_time import time_world
+from config import BOT_TOKEN
+from weather import get_weather
+from translate import *
+from parser import *
+from news import get_article
+from world_time import time_world
 import requests
 
 bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
-translator = Translator()
 
 
 @bot.message_handler(commands=['start'])

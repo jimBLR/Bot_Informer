@@ -1,6 +1,6 @@
 import requests
 import datetime
-from templates.config import OWM_TOKEN
+from config import OWM_TOKEN
 
 token = OWM_TOKEN
 
