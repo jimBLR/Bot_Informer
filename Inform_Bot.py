@@ -7,6 +7,7 @@ from parser import *
 from news import get_article
 from world_time import time_world
 import requests
+import os
 
 bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
 
@@ -103,8 +104,8 @@ def parse(message):
             for page in range(1, ):
                 html = get_html(message.text, params={'page': page})
                 car_list.extend(get_content(html.text))
-                save_file(car_list, '../cars.xlsx')
-                file = open('../cars.xlsx')
+                save_file(car_list, f"{os.getcwd()}/cars.xlsx")
+                file = open(f"{os.getcwd()}/cars.xlsx")
                 bot.send_message(message.chat.id, f'Вот Ваша ссылка для скачивания списка автомобилей!')
                 bot.send_document(message.chat.id, file)
         else:
