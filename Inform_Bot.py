@@ -132,7 +132,8 @@ def get_input(message):
         btn10 = types.KeyboardButton('Polish')
         btn11 = types.KeyboardButton('Spanish')
         btn12 = types.KeyboardButton('French')
-        markup.add(btn8, btn9, btn10, btn11, btn12)
+        back = types.KeyboardButton('Назад')
+        markup.add(btn8, btn9, btn10, btn11, btn12, back)
         bot.send_message(message.chat.id, 'К сожалению вы не выбрали "язык" для перевда ...', reply_markup=markup)
 
     else:
